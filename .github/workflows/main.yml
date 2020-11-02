@@ -8,14 +8,11 @@ jobs:
     runs-on: windows-latest
  
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
       name: Checkout Code
-      
-    - name: Checkout submodules
-      uses: srt32/git-actions@v0.0.3
       with:
-        args: git submodule update --init --recursive
-       
+       submodules: 'recursive'
+            
     - name: Setup MSBuild Path
       uses:  warrenbuckley/Setup-MSBuild@v1
        
